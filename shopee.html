@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21afro21 - Lojas Parceiras Shopee</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fff5f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #FF531A;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .logo span {
+            color: #FF9D00;
+        }
+
+        .tagline {
+            text-align: center;
+            font-style: italic;
+            margin-top: 5px;
+            color: #ffe8e0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255, 83, 26, 0.8), rgba(255, 157, 0, 0.8)), url('https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #FF9D00;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            background-color: #e68a00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            color: #FF531A;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #FF531A;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Stores Section */
+        .stores {
+            padding: 80px 0;
+            background-color: #fff5f0;
+        }
+
+        .stores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .store-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .store-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .store-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .store-item-content {
+            padding: 20px;
+        }
+
+        .store-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #FF531A;
+        }
+
+        .store-item p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .commission {
+            font-weight: bold;
+            color: #FF9D00;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 40px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #FF531A;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-detail i {
+            margin-right: 10px;
+            color: #FF9D00;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #FF531A;
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .footer-section {
+            flex: 1;
+        }
+
+        .footer-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #FF9D00;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ffe8e0;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #FF9D00;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: #FF9D00;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #ffc9b3;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content, .contact-container {
+                flex-direction: column;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">21<span>AFRO</span>21</div>
+            </div>
+            <p class="tagline">Lojas Parceiras Shopee - As Melhores Ofertas</p>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Descubra Nossas Lojas Parceiras</h1>
+            <p>Encontre as melhores ofertas com as maiores comissões na Shopee. Parcerias selecionadas para você economizar e ganhar!</p>
+            <a href="#stores" class="btn">Ver Lojas Parceiras</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Sobre a 21afro21</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Nossa Missão</h3>
+                    <p>A 21afro21 nasceu com o propósito de conectar consumidores às melhores oportunidades na Shopee, oferecendo acesso exclusivo a lojas parceiras com comissões especiais.</p>
+                    <p>Nossa curadoria garante que cada loja parceira ofereça produtos de qualidade, preços competitivos e condições vantajosas para nossos clientes.</p>
+                    <p>Acreditamos que compras inteligentes devem ser acessíveis a todos, e trabalhamos diariamente para tornar essa realidade possível.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Equipe 21afro21">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stores Section -->
+    <section class="stores" id="stores">
+        <div class="container">
+            <h2 class="section-title">Nossas Lojas Parceiras</h2>
+            <div class="stores-grid">
+                <div class="store-item">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Borboletinha Carioca">
+                    <div class="store-item-content">
+                        <h3>Borboletinha Carioca</h3>
+                        <p>Moda feminina com estilo único e qualidade incomparável</p>
+                        <p class="commission">Até 26% de Comissão</p>
+                        <a href="https://s.shopee.com.br/9zpYsa3szI" class="btn" target="_blank">Acessar Loja</a>
+                    </div>
+                </div>
+                <div class="store-item">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Outlet premium">
+                    <div class="store-item-content">
+                        <h3>Outlet premium</h3>
+                        <p>Produtos selecionados com descontos especiais</p>
+                        <p class="commission">Até 22% de Comissão</p>
+                        <a href="https://s.shopee.com.br/804UUuBV2q" class="btn" target="_blank">Acessar Loja</a>
+                    </div>
+                </div>
+                <div class="store-item">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="MIXX OFERTA SHOP">
+                    <div class="store-item-content">
+                        <h3>MIXX OFERTA SHOP</h3>
+                        <p>Variedade incrível com os melhores preços</p>
+                        <p class="commission">Até 22% de Comissão</p>
+                        <a href="https://s.shopee.com.br/qbJxjcmaf" class="btn" target="_blank">Acessar Loja</a>
+                    </div>
+                </div>
+                <div class="store-item">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Agylly Distribuidora">
+                    <div class="store-item-content">
+                        <h3>Agylly Distribuidora</h3>
+                        <p>Distribuidora oficial com produtos originais</p>
+                        <p class="commission">Até 21% de Comissão</p>
+                        <a href="https://s.shopee.com.br/AA8z4t3FeL" class="btn" target="_blank">Acessar Loja</a>
+                    </div>
+                </div>
+                <div class="store-item">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="RM VARIEDADES01">
+                    <div class="store-item-content">
+                        <h3>RM VARIEDADES01</h3>
+                        <p>Tudo que você precisa em um só lugar</p>
+                        <p class="commission">Até 20% de Comissão</p>
+                        <a href="https://s.shopee.com.br/8KhKtWAEMw" class="btn" target="_blank">Acessar Loja</a>
+                    </div>
+                </div>
+                <div class="store-item">
+                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="TSA VERSATIL">
+                    <div class="store-item-content">
+                        <h3>TSA VERSATIL</h3>
+                        <p>Produtos versáteis para todas as ocasiões</p>
+                        <p class="commission">Até 20% de Comissão</p>
+                        <a href="https://s.shopee.com.br/9KZs5M6QLE" class="btn" target="_blank">Acessar Loja</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Fale Conosco</h3>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <p>contato@21afro21.com.br</p>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-clock"></i>
+                            <p>Segunda a Sexta: 9h às 18h</p>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Parceira oficial Shopee Brasil</p>
+                        </div>
+                    </div>
+                    <h3>Siga-nos</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Seja um Parceiro</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nome da Loja</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Proposta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5561991406657?text=Olá! Gostaria de saber mais sobre as lojas parceiras 21afro21." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>21afro21</h3>
+                    <p>Conectando você às melhores oportunidades de compras na Shopee com comissões especiais e ofertas exclusivas.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <a href="#about">Sobre Nós</a>
+                    <a href="#stores">Lojas Parceiras</a>
+                    <a href="#contact">Seja Parceiro</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@21afro21.com.br</p>
+                    <p><i class="fas fa-clock"></i> Segunda a Sexta: 9h-18h</p>
+                    <p><i class="fas fa-store"></i> Parceira Shopee</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 21afro21. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado pelo seu interesse! Entraremos em contato em breve para discutir a parceria.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
