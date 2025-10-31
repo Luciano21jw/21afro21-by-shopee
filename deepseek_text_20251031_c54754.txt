@@ -1,0 +1,12 @@
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dependências
+node_modules/
+
+# Arquivos de ambiente
+.env
